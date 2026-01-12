@@ -475,58 +475,57 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
 }
 
 .reviews-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 900px;
-    margin: 0 auto;
+    column-count: 3;
+    column-gap: 2rem;
 }
 
 .review-card {
-    padding: 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #ffffff; /* Solid, non-transparent background */
+    border-radius: 32px; /* Keep round corners */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 .review-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-gold);
 }
 
 .review-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
 }
 
 .reviewer-info {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .reviewer-name h4 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
 }
 
 .review-text {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--text-dark);
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
 }
 
 .review-date {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #999;
+    align-self: flex-end;
 }
 
 .load-more-container {
