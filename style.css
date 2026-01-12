@@ -714,20 +714,32 @@ footer {
     .rating-group {
         margin-bottom: 2.5rem;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Align label and stars to the left */
-        gap: 0.8rem; /* Vertical gap to prevent collision */
+        display: block; /* Forced block layout */
+        text-align: left;
+    }
+    
+    .rating-label-block {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.8rem; /* Vertical margin for separation */
+    }
+    
+    .rating-stars-block {
+        display: block;
+        width: 100%;
     }
     
     .rating-group label {
         font-size: 1rem;
         font-weight: 600;
+        position: static; /* Ensure it's not floating */
+        transform: none;
     }
     
     .stars {
         font-size: 2rem;
-        justify-content: flex-start; /* Align stars to the left */
+        justify-content: flex-start;
+        display: flex;
     }
     
     input[type="text"], textarea, select {
