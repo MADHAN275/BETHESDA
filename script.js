@@ -83,12 +83,12 @@ function initAnimations() {
 
 // --- Background Slider ---
 const backgroundImages = [
-    '1.jpg',
-    '2.jpg',
-    '3.jpg',
-    '4.jpeg',
-    '5.jpg',
-    '6.jpg'
+    './1.jpg',
+    './2.jpg',
+    './3.jpg',
+    './4.jpeg',
+    './5.jpg',
+    './6.jpg'
 ];
 
 function initBackgroundSlider() {
@@ -115,7 +115,7 @@ function initBackgroundSlider() {
 // --- API Logic ---
 async function fetchReviews() {
     try {
-        const response = await fetch('http://localhost:3000/api/reviews');
+        const response = await fetch('/api/reviews'); // Relative path for production
         if (!response.ok) throw new Error('Failed to fetch reviews');
         reviewsData = await response.json();
         renderReviews(reviewsData);
@@ -270,7 +270,7 @@ function initForm() {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/api/reviews', {
+            const response = await fetch('/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

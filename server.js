@@ -1,14 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use environment port for deployment
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve Static Files from Vite Build
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // MongoDB Connection
 const MONGO_URI = 'mongodb+srv://madhantamilarasan80_db_user:yMpdsIAgONYpUBkh@cluster0.q6clxd0.mongodb.net/BETHESDA?retryWrites=true&w=majority&appName=Cluster0';
@@ -58,6 +62,11 @@ app.post('/api/reviews', async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
+});
+
+// Catch-all route to serve index.html for non-API requests
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Start Server
