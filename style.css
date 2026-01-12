@@ -120,12 +120,12 @@ ul {
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.65); /* Slightly more opaque */
-    backdrop-filter: blur(25px) saturate(180%); /* stronger blur and vivid colors behind */
+    background: rgba(255, 255, 255, 0.9); /* Significantly more opaque for visibility */
+    backdrop-filter: blur(25px) saturate(180%); 
     -webkit-backdrop-filter: blur(25px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Crisper border */
-    border-radius: 32px; /* Rounder corners */
-    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.05), 0 8px 16px -8px rgba(0, 0, 0, 0.05); /* Multi-layered soft shadow */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 32px;
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
