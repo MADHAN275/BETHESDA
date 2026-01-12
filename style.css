@@ -98,10 +98,10 @@ ul {
     transform: translateX(-50%);
     width: 90%;
     max-width: 1200px;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem; /* Reduced vertical padding */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Vertical center alignment */
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -136,6 +136,8 @@ ul {
     font-size: 1.5rem;
     color: var(--text-dark);
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
@@ -338,33 +340,38 @@ ul {
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* Increased spacing */
     position: relative;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .rating-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    gap: 0.5rem;
 }
 
 .rating-group label {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .stars {
-    font-size: 2rem;
+    font-size: 2.2rem; /* Larger stars */
     color: #ddd;
     cursor: pointer;
     transition: color 0.2s;
+    display: flex;
+    gap: 0.2rem;
+    line-height: 1;
 }
 
 .stars i {
@@ -675,12 +682,18 @@ footer {
     .description-section, .form-section, .reviews-section, .gallery-section { padding: 6rem 0; }
 }
 
+/* --- Mobile Fixes --- */
 @media (max-width: 480px) {
-    .hero-title { font-size: 2.2rem; }
-    .glass-nav { top: 10px; width: 95%; }
-    .btn-primary { padding: 0.5rem 1rem; font-size: 0.9rem; }
-    .logo svg { width: 24px; height: 24px; }
+    .glass-nav { 
+        top: 10px; 
+        width: 95%; 
+        padding: 0.6rem 1rem; 
+    }
+    .logo { font-size: 1.1rem; }
+    .logo svg { width: 20px; height: 20px; margin-right: 5px !important; }
+    .btn-primary { padding: 0.5rem 0.9rem; font-size: 0.85rem; }
     
+    .hero-title { font-size: 2.2rem; }
     .description-text { font-size: 1.1rem; }
     
     .review-card { 
@@ -693,18 +706,24 @@ footer {
     /* Form Mobile Optimization */
     .form-card {
         padding: 1.5rem;
-        width: 100%;
+        width: 95%; /* Fluid width */
+        max-width: none; 
         border-radius: 20px;
     }
+    
     .rating-group {
-        margin-bottom: 3rem; /* Extra space for stars */
+        margin-bottom: 2rem;
+        width: 100%;
+        align-items: center;
     }
+    
     .stars {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
+    
     input[type="text"], textarea, select {
         padding: 0.8rem;
-        font-size: 16px; /* Prevents iOS zoom */
+        font-size: 16px; 
     }
     .form-group label {
         font-size: 0.9rem;
@@ -713,4 +732,7 @@ footer {
         font-size: 1rem;
         padding: 0.8rem;
     }
+    
+    /* Container Padding */
+    .container { padding: 0 1rem; }
 }
