@@ -475,62 +475,59 @@ textarea:focus + label, textarea:not(:placeholder-shown) + label {
 }
 
 .reviews-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 900px;
-    margin: 0 auto;
+    column-count: 3;
+    column-gap: 2rem;
 }
 
 .review-card {
-    padding: 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    background: #ffffff; /* Solid white, NOT transparent */
-    border-radius: 32px;
+    gap: 1rem;
+    background: #ffffff; /* Solid white */
+    border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: left; /* Left align for small cards */
 }
 
 .review-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
 }
 
 .review-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
 }
 
 .reviewer-info {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .reviewer-name h4 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
 }
 
 .review-text {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #444;
 }
 
 .review-date {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #999;
+    align-self: flex-end;
 }
 
 .load-more-container {
@@ -687,10 +684,10 @@ footer {
     .description-text { font-size: 1.1rem; }
     
     .review-card { 
-        padding: 2rem; 
+        padding: 1.2rem; 
     }
     .review-text {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
 
     /* Form Mobile Optimization */
