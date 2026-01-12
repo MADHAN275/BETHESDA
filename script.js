@@ -138,6 +138,7 @@ function renderReviews(reviews) {
     reviews.forEach(review => {
         const card = document.createElement('div');
         card.className = 'glass-card review-card';
+        card.style.opacity = '0'; // Start hidden for animation
         
         // Format Date
         const dateObj = new Date(review.date);
@@ -164,18 +165,20 @@ function renderReviews(reviews) {
         grid.appendChild(card);
     });
     
-    // Animate new cards
-    gsap.from('.review-card', {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '#reviews-grid',
-            start: 'top 80%'
-        }
-    });
+    // Animate new cards - Ensure DOM is ready
+    setTimeout(() => {
+        gsap.to('.review-card', {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#reviews-grid',
+                start: 'top 90%'
+            }
+        });
+    }, 100);
 }
 
 function generateStars(rating) {
