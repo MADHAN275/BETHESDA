@@ -703,4 +703,22 @@ footer {
     
     .description-text { font-size: 1.1rem; }
     .review-card { padding: 1.5rem; }
+
+    /* Form Mobile Optimization */
+    .form-card {
+        padding: 1.5rem;
+        width: 100%;
+        border-radius: 20px;
+    }
+    input[type="text"], textarea, select {
+        padding: 0.8rem;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    .btn-submit {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
 }
