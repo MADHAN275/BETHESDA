@@ -662,17 +662,45 @@ footer {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-    .hero-title { font-size: 3.5rem; }
+    .glass-nav { width: 95%; padding: 1rem 1.5rem; }
+    .hero-title { font-size: 4rem; }
     .reviews-grid { column-count: 2; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
     .item-1, .item-2, .item-3, .item-4 { grid-column: span 1; grid-row: span 1; height: 300px; }
 }
 
 @media (max-width: 768px) {
-    .glass-nav { padding: 1rem; }
-    .hero-title { font-size: 2.5rem; }
+    .glass-nav { 
+        padding: 0.8rem 1.2rem; 
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+    .logo { font-size: 1.2rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a:not(.btn-primary) { display: none; } /* Hide links, keep button */
+    
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1.2rem; max-width: 90%; }
+    .btn-hero { padding: 1rem 2rem; font-size: 1rem; }
+    
+    .description-card, .form-card { padding: 2rem; width: 95%; }
     .form-row { grid-template-columns: 1fr; }
+    
     .reviews-grid { column-count: 1; }
+    
     .gallery-grid { grid-template-columns: 1fr; }
-    .description-card { padding: 2rem; }
+    .gallery-item { height: 250px; }
+    
+    .section-header h2 { font-size: 2.2rem; }
+    .description-section, .form-section, .reviews-section, .gallery-section { padding: 6rem 0; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.2rem; }
+    .glass-nav { top: 10px; width: 95%; }
+    .btn-primary { padding: 0.5rem 1rem; font-size: 0.9rem; }
+    .logo svg { width: 24px; height: 24px; }
+    
+    .description-text { font-size: 1.1rem; }
+    .review-card { padding: 1.5rem; }
 }
