@@ -190,13 +190,6 @@ function generateStars(rating) {
     return stars;
 }
 
-// Filter Logic (Simplified to All)
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        renderReviews(reviewsData);
-    });
-});
-
 // --- Form Logic ---
 function initForm() {
     // Star Rating Interaction
