@@ -712,13 +712,22 @@ footer {
     }
     
     .rating-group {
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         width: 100%;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align label and stars to the left */
+        gap: 0.8rem; /* Vertical gap to prevent collision */
+    }
+    
+    .rating-group label {
+        font-size: 1rem;
+        font-weight: 600;
     }
     
     .stars {
         font-size: 2rem;
+        justify-content: flex-start; /* Align stars to the left */
     }
     
     input[type="text"], textarea, select {
