@@ -93,13 +93,14 @@ const backgroundImages = [
 
 function initBackgroundSlider() {
     const sliderContainer = document.getElementById('bg-slider');
+    const overlay = sliderContainer.querySelector('.overlay-gradient');
     
     // Create image elements
     backgroundImages.forEach((url, index) => {
         const div = document.createElement('div');
         div.className = `bg-slide ${index === 0 ? 'active' : ''}`;
         div.style.backgroundImage = `url(${url})`;
-        sliderContainer.insertBefore(div, sliderContainer.firstChild); // Insert before overlay
+        sliderContainer.insertBefore(div, overlay); // Insert before overlay
     });
 
     const slides = document.querySelectorAll('.bg-slide');
