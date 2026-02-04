@@ -40,7 +40,7 @@ function initAnimations() {
     tl.from('.hero-title span', { y: 100, opacity: 0, duration: 1, stagger: 0.2, ease: 'power4.out' })
       .from('.hero-subtitle', { y: 50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.5')
       .from('.hero-decoration', { scale: 0, opacity: 0, duration: 0.8, ease: 'back.out(1.7)' }, '-=0.5')
-      .from('.btn-hero', { y: 50, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5');
+      .from('.hero-buttons', { y: 50, opacity: 0, duration: 0.8, ease: 'power3.out', clearProps: 'all' }, '-=0.5');
 
     // Section Headers
     gsap.utils.toArray('.section-header').forEach(header => {
