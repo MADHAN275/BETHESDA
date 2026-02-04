@@ -150,7 +150,6 @@ function renderReviews(reviews) {
         card.innerHTML = `
             <div class="review-header">
                 <div class="reviewer-info">
-                    <div class="avatar">${review.name.charAt(0)}</div>
                     <div class="reviewer-name">
                         <h4>${review.name}</h4>
                         <span class="category-badge">${review.category}</span>
